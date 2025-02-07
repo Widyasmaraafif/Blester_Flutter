@@ -1,6 +1,6 @@
 import 'package:blester/common/widgets/appbar/appbar.dart';
 import 'package:blester/common/widgets/texts/section_heading.dart';
-import 'package:blester/screens/home/project_screen.dart';
+import 'package:blester/screens/home/board/board_screen.dart';
 import 'package:blester/screens/home/widgets/assign_to_me.dart';
 import 'package:blester/screens/home/widgets/board.dart';
 import 'package:blester/screens/home/widgets/project_box.dart';
@@ -64,10 +64,11 @@ class HomeScreen extends StatelessWidget {
                       ),
                       itemBuilder: (_, index) {
                         return MyProjectBox(
-                          colorGradient: Colors.blue,
+                          colorGradient:
+                              const Color.fromARGB(255, 196, 227, 241),
                           taskCompleted: 2,
                           taskTotal: 16,
-                          icon: Iconsax.activity,
+                          icon: Iconsax.code5,
                           projectName: 'HR - Project',
                           onTap: () => Get.to(() => const ProjectScreen()),
                         );
@@ -84,24 +85,28 @@ class HomeScreen extends StatelessWidget {
                     icon: Iconsax.presention_chart,
                     title: 'Create Project',
                     subtitle: 'You can create new project task',
+                    backgroundIconColor: Colors.purple,
                   ),
                   SizedBox(height: MySizes.sm / 2),
                   MyBoard(
                     icon: Iconsax.ranking,
                     title: 'Create Goals',
                     subtitle: 'You can create new goals board',
+                    backgroundIconColor: Colors.blue,
                   ),
                   SizedBox(height: MySizes.sm / 2),
                   MyBoard(
                     icon: Iconsax.user_edit,
                     title: 'Create Portfolio',
                     subtitle: 'You can create new portfolio task',
+                    backgroundIconColor: Colors.lightGreen,
                   ),
-                  SizedBox(height: MySizes.spaceBtwSections),
+                  SizedBox(height: MySizes.spaceBtwItems),
                   MySectionHeading(
                     title: 'Assigned to me',
                     showActionButton: false,
                   ),
+                  SizedBox(height: MySizes.spaceBtwItems),
                   SizedBox(
                     child: ListView.separated(
                       shrinkWrap: true,

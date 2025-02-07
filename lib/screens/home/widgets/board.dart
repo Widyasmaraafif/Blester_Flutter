@@ -9,10 +9,11 @@ class MyBoard extends StatelessWidget {
     required this.icon,
     required this.title,
     required this.subtitle,
-    this.onTap,
+    this.onTap, required this.backgroundIconColor,
   });
 
   final IconData icon;
+  final Color backgroundIconColor;
   final String title;
   final String subtitle;
   final VoidCallback? onTap;
@@ -34,11 +35,20 @@ class MyBoard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(
-                    icon,
-                    size: 64,
+                  Container(
+                    margin: EdgeInsets.all(MySizes.sm),
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: backgroundIconColor,
+                      borderRadius: BorderRadius.circular(7),
+                    ),
+                    child: Icon(
+                      icon,
+                      size: 24,
+                      color: Colors.white,
+                    ),
                   ),
-                  SizedBox(width: MySizes.spaceBtwItems / 2),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

@@ -32,15 +32,15 @@ class MyProjectBox extends StatelessWidget {
             colors: [colorGradient, Colors.white], // Gradasi biru muda ke putih
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            stops: [0.1, 1.0],
+            stops: [0.1, 0.5],
           ),
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
               color: Colors.black
-                  .withOpacity(0.2), // Warna shadow dengan transparansi
-              spreadRadius: 2, // Seberapa luas shadow menyebar
-              blurRadius: 2, // Seberapa blur shadow
+                  .withOpacity(0.1), // Warna shadow dengan transparansi
+              spreadRadius: 1, // Seberapa luas shadow menyebar
+              blurRadius: 1, // Seberapa blur shadow
               offset: Offset(2, 4), // Posisi bayangan (X, Y)
             ),
           ],
@@ -49,9 +49,16 @@ class MyProjectBox extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(
-              icon,
-              size: 48,
+            Container(
+              width: 48,
+              height: 48,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(7),
+              ),
+              child: Icon(
+                icon, color: Colors.white,
+              ),
             ),
             SizedBox(height: MySizes.spaceBtwItems),
             Text(
